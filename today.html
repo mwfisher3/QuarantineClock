@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="refresh" content="60">
+	<title>Time-ish</title>
 <style>
 	body {
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 
@@ -28,11 +28,17 @@
 <h1 id="day"></h1>
 <h2 id="time"></h2>
 <script>
-	var d = new Date();
-	var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-	var time = ["midnight-ish", "late night", "late", "super late", "super early","really early","dawn","morning","morning","mid-morning","mid-morning","late morning","noon-ish","afternoon","afternoon","mid-afternoon","late afternoon","early evening","early evening","dusk-ish","evening","evening","late evening","late evening"]; 
-	document.getElementById("time").innerHTML = "(" + time[d.getHours()] + ")";
-	document.getElementById("day").innerHTML = days[d.getDay()];
+	var update = function() {
+		var d = new Date();
+		var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		var time = ["midnight-ish", "late night", "late", "super late", "super early","really early","dawn","morning","morning","mid-morning","mid-morning","late morning","noon-ish","afternoon","afternoon","mid-afternoon","late afternoon","early evening","early evening","dusk-ish","evening","evening","late evening","late evening"]; 
+		document.getElementById("time").innerHTML = "(" + time[d.getHours()] + ")";
+		document.getElementById("day").innerHTML = days[d.getDay()];
+	}
+	
+	update();
+	
+	var timer = setInterval(update, 60*1000);
 </script>
 
 </body>
