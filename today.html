@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
+	<meta charset="UTF-8">
 	<title>Time-ish</title>
-<style>
+	<style>
 	body {
 		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 
 			"Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
@@ -12,30 +13,23 @@
 	}
 	div {
   		display: flex;
+  		flex-direction: column;
   		align-items: center;
-  		justify-content: center;
 	}
-	div * {
-		width: auto;
-		height: auto;
+	#day {
+		font-size: 50vh;
+		color: whitesmoke;
 	}
-	h1 {
-		font-size: 120px;
-		line-height: 0px;
-		padding-top:40px;
-		color: #FFFFFF;
+	#time {
+		font-size: 25vh;
+		color: yellow;
 	}
-	h2 {
-		font-size: 60px;
-		line-height: 50px;
-		color: #808080;
-	}
-</style>
+	</style>
 </head>
 <body>
 <div>
-	<h1 id="day"></h1>
-	<h2 id="time"></h2>
+	<div id="day"></div>
+	<div id="time"></div>
 </div>
 <script>
 	var update = function() {
@@ -50,6 +44,5 @@
 	
 	var timer = setInterval(update, 60*1000);
 </script>
-
 </body>
 </html>
