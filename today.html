@@ -10,6 +10,15 @@
 		overflow: hidden;
 		margin: 0px;
 	}
+	div {
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+	}
+	div * {
+		width: auto;
+		height: auto;
+	}
 	h1 {
 		font-size: 120px;
 		line-height: 0px;
@@ -24,9 +33,10 @@
 </style>
 </head>
 <body>
-<center>
-<h1 id="day"></h1>
-<h2 id="time"></h2>
+<div>
+	<h1 id="day"></h1>
+	<h2 id="time"></h2>
+</div>
 <script>
 	var update = function() {
 		var d = new Date();
