@@ -4,33 +4,31 @@
 	<meta charset="UTF-8">
 	<title>Time-ish</title>
 	<style>
-	body {
-		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 
+  	body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 
 			"Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
-		background-color: midnightblue;
-		margin: 3vw 3vh;
-	}
-	div {
+			background-color: midnightblue;
+			margin: 3vw 3vh;
   		display: flex;
   		flex-direction: column;
   		align-items: center;
-	}
-	#day {
-		font-size: 45vh;
-		color: whitesmoke;
-	}
-	#time {
-		font-size: 20vh;
-		color: yellow;
-	}
+  		justify-content: center;
+  		height: 80vh;
+		}
+		#day {
+			font-size: 10vw;
+			color: whitesmoke;
+		}
+		#time {
+			font-size: 6vw;
+			color: yellow;
+		}
 	</style>
 </head>
 <body>
-<div>
 	<div id="day"></div>
 	<div id="time"></div>
-</div>
-<script>
+	<script>
 	var update = function() {
 		var d = new Date();
 		var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -42,6 +40,6 @@
 	update();
 	
 	var timer = setInterval(update, 60*1000);
-</script>
+	</script>
 </body>
 </html>
