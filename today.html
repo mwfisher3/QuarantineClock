@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta http-equiv="refresh" content="60">
-<style>
-	body {
-		background-color: black;
-		overflow: hidden;
-		margin: 0px;
+	<head>
+	<meta charset="UTF-8">
+	<title>Time-ish</title>
+	<style>
+  	body {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 
+		"Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
+		background-color: midnightblue;
+		margin: 3vw 3vh;
+  		display: flex;
+  		flex-direction: column;
+  		align-items: center;
+  		justify-content: center;
+  		height: 80vh;
+		}
+	#day {
+		font-size: 18vw;
+		color: whitesmoke;
 	}
-	h1 {
-		font-size: 120px;
-		line-height: 0px;
-		padding-top:40px;
-		color: #FFFFFF;
+	#time {
+		font-size: 10vw;
+		color: yellow;
 	}
-	h2 {
-		font-size: 60px;
-		line-height: 50px;
-		color: #808080;
-	}
-</style>
+	</style>
 </head>
 <body>
-<center>
-<h1 id="day"></h1>
-<h2 id="time"></h2>
-<script>
-	var d = new Date();
-	var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-	var time = ["midnight-ish", "late night", "late", "super late", "super early","really early","dawn","morning","morning","mid-morning","mid-morning","late morning","noon-ish","afternoon","afternoon","mid-afternoon","late afternoon","early evening","early evening","dusk-ish","evening","evening","late evening","late evening"]; 
-	document.getElementById("time").innerHTML = "(" + time[d.getHours()] + ")";
-	document.getElementById("day").innerHTML = days[d.getDay()];
-</script>
-
+	<div id="day"></div>
+	<div id="time"></div>
+	<script>
+	var update = function() {
+		var d = new Date();
+		var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		var time = ["midnight-ish", "late night", "late", "super late", "super early","really early","dawn","morning","morning","mid-morning","mid-morning","late morning","noon-ish","afternoon","afternoon","mid-afternoon","late afternoon","early evening","early evening","dusk-ish","evening","evening","late evening","late evening"]; 
+		document.getElementById("time").innerHTML = "(" + time[d.getHours()] + ")";
+		document.getElementById("day").innerHTML = days[d.getDay()];
+	}
+	
+	update();
+	
+	var timer = setInterval(update, 60*1000);
+	</script>
 </body>
 </html>
